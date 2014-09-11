@@ -1,17 +1,15 @@
-myPhrase = gets.chomp
 counter = 0
 while counter != 3
+  myPhrase = gets.chomp
   if myPhrase == "BYE"
-    counter = counter+1
-    puts counter
+    counter += 1
   else
     counter = 0
      if myPhrase == myPhrase.upcase
-       puts "NO! NOT SINCE #{rand(1930..1951)}!"
+       puts "NO! NOT SINCE #{rand(1930..1950)}!"
      else
        puts "SPEAK UP SUNNY!"
      end
   end
-  myPhrase = gets.chomp
 end
 puts "FINE! BYE!"
