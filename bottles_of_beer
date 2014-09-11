@@ -1,5 +1,0 @@
-j
-  puts "#{counter} bottles of beer on the wall"
-  counter = counter-1
-end
-
