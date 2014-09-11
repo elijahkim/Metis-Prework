@@ -10,4 +10,4 @@ while myWord!=""
   myWord = gets.chomp
 end
 puts "your array is"
-puts myList.to_s
+puts myList.sort.to_s
