@@ -7,7 +7,7 @@ class OrangeTree
     @numOranges =0
   end
 
-  def height
+  def getHeight
     puts "your tree is #{height}ft tall"
   end
 
@@ -37,16 +37,9 @@ class OrangeTree
     elsif age > 20
       numOranges = rand(10)+20
     end
-    if age >= 50
-      puts "your tree has faded"
-      exit
-    end
   end
 end
 
-tree = OrangeTree.new
-tree.height
-tree.orangeCount
 
 
 
