@@ -8,11 +8,11 @@ class OrangeTree
   end
 
   def getHeight
-    puts "your tree is #{@height}ft tall"
+    return "your tree is #{@height}ft tall"
   end
 
   def orangeCount
-    puts "your tree has #{@numOranges} oranges"
+    return "your tree has #{@numOranges} oranges"
   end
 
   def pickOrange
@@ -23,6 +23,10 @@ class OrangeTree
    else
      puts "there aren't any oranges to pick"
    end
+  end
+
+  def getAge
+    return "Your tree's age is #{@age}"
   end
 
   def oneYearPasses
@@ -40,15 +44,6 @@ class OrangeTree
   end
 end
 
-tree = OrangeTree.new
-tree.getHeight
-tree.orangeCount
-tree.pickOrange
-tree.oneYearPasses
-tree.oneYearPasses
-tree.getHeight
-tree.orangeCount
-tree.pickOrange
 
 
 
