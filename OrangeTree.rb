@@ -30,9 +30,9 @@ class OrangeTree
     age += 1
     if age <= 4
       numOranges = 0
-    elsif age (5..10)
+    elsif age.between?(5,10)
       numOranges = rand(5)+3
-    elsif age (11..20)
+    elsif age.between?(11,20)
       numOranges = rand(10)+10
     elsif age > 20
       numOranges = rand(10)+20
