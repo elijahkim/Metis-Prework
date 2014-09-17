@@ -44,7 +44,9 @@ class OrangeTree
   end
 end
 
-
+puts "What would you like to do?"
+instruction = gets.chomp
+instruction
 
 
 
