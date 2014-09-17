@@ -1,11 +1,13 @@
-def chime (&chimenoise)
+def chime(&chimenoise)
   startTime = Time.now.hour
   if startTime > 12
     startTime = startTime - 12
   end
-  self.each Do |startTime|
-    chimenoise
+  startTime.times do |time|
+    chimenoise.call
+  end
 end
 
-puts chime.call("dong")
-
+chime do
+  puts "DONG!"
+end
