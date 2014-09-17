@@ -8,11 +8,11 @@ class OrangeTree
   end
 
   def getHeight
-    return "your tree is #{@height}ft tall"
+    return @height
   end
 
   def orangeCount
-    return "your tree has #{@numOranges} oranges"
+    return @numOranges
   end
 
   def pickOrange
@@ -46,18 +46,20 @@ end
 
 tree = OrangeTree.new
 
-def interaction
+def interaction(tree)
+  puts "what would you like to do"
   input = gets.chomp
   if input == "next year"
     tree.oneYearPasses
+    puts "one year has passed"
   elsif input == "pick orange"
     tree.pickOrange
   elsif input == "get age"
-    tree.getAge
+    puts "your tree is #{tree.getAge} years old"
   elsif input == "count oranges"
-    tree.orangeCount
+    puts "your tree has #{tree.orangeCount} oranges"
   elsif input == "get height"
-    tree.getHeight
+    puts "your tree is #{tree.getHeight} ft tall"
   else
     puts "Your command is unknown. Please try again."
     instructions
@@ -76,13 +78,10 @@ def instructions
     puts "pick orange"
     puts "next year"
   end
-  options == ""
 end
 
-puts "What would you like to do?"
-
 while tree.getAge <= 50
-  interaction
+  interaction(tree)
 end
 
 puts "your tree has reached max level"
