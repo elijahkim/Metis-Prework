@@ -26,7 +26,7 @@ class OrangeTree
   end
 
   def getAge
-    return "Your tree's age is #{@age}"
+    return @age
   end
 
   def oneYearPasses
@@ -46,42 +46,42 @@ end
 
 tree = OrangeTree.new
 
-  def interaction
-    input = gets.chomp
-    if input == "next year"
-      tree.oneYearPasses
-    elsif input == "pick orange"
-      tree.pickOrange
-    elsif input == "get age"
-      tree.getAge
-    elsif input == "count oranges"
-      tree.orangeCount
-    elsif input == "get height"
-      tree.getHeight
-    else
-      puts "Your command is unknown. Please try again."
-      instructions
-    end
+def interaction
+  input = gets.chomp
+  if input == "next year"
+    tree.oneYearPasses
+  elsif input == "pick orange"
+    tree.pickOrange
+  elsif input == "get age"
+    tree.getAge
+  elsif input == "count oranges"
+    tree.orangeCount
+  elsif input == "get height"
+    tree.getHeight
+  else
+    puts "Your command is unknown. Please try again."
+    instructions
   end
+end
 
-  def instructions
-    puts "do you need to hear the options"
-    puts "type yes or press enter to continue"
-    options = gets.chomp
-    if options == "yes"
-      puts "There is:"
-      puts "count oranges"
-      puts "get age"
-      puts "get height"
-      puts "pick orange"
-      puts "next year"
-    end
-    options == ""
+def instructions
+  puts "do you need to hear the options"
+  puts "type yes or press enter to continue"
+  options = gets.chomp
+  if options == "yes"
+    puts "There is:"
+    puts "count oranges"
+    puts "get age"
+    puts "get height"
+    puts "pick orange"
+    puts "next year"
   end
+  options == ""
+end
 
 puts "What would you like to do?"
 
-while @age < 50
+while tree.getAge <= 50
   interaction
 end
 
