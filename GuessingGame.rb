@@ -74,18 +74,23 @@ class GuessingGame
     @num_rounds = 0
   end
 
-  def execute_rounds
-    guess_counter = 0
-    win_counter = 0
+  def play
     prompt_user_for_rounds
+    execute_rounds
+    put_stats
+  end
+
+  private
+
+  def execute_rounds
+    @guess_counter = 0
+    @win_counter = 0
     @num_rounds.times do
       game = Round.new
       game.play
-      guess_counter += game.get_guess
-      win_counter += game.get_win
+      @guess_counter += game.get_guess
+      @win_counter += game.get_win
     end
-    puts "you guessed #{guess_counter} times and won #{win_counter} times"
-    puts "your average number of guesses per round is #{guess_counter/@num_rounds}"
   end
 
   def prompt_user_for_rounds
@@ -93,10 +98,15 @@ class GuessingGame
     @num_rounds = gets.chomp.to_i
   end
 
-  def number_of_guesses
-    @num_guesses = 0
+  def get_average
+    @guess_counter/@num_rounds
+  end
+
+  def put_stats
+    puts "you guessed #{@guess_counter} times and won #{@win_counter} times"
+    puts "your average number of guesses per round is #{get_average}"
   end
 end
 
 game = GuessingGame.new
-game.execute_rounds
+game.play
